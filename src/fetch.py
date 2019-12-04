@@ -73,6 +73,6 @@ for link in inspire_links:
 		if link_url.split('.')[-1] == 'zip':
 			doc_links.append(link_url)
 			print('Found link {}'.format(link_url))
-			link_key=link_url.split('/')[-1]
+			link_key="files/{}".format(link_url.split('/')[-1])
 			download_report(link=link_url,key=link_key,archive_bucket=archive_bucket)
 	print('Found {} links from {}/{} pages'.format(len(doc_links),visited,len(inspire_links)))
