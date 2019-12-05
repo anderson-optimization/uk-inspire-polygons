@@ -1,5 +1,5 @@
 for file in */*.gml
-OGR=docker run -v $(pwd):/tmp/work2 -w /tmp/work2 andersonopt/geoanalysis ogr2ogr
+OGR="docker run -v $(pwd):/tmp/work2 -w /tmp/work2 andersonopt/geoanalysis ogr2ogr"
 do
  echo "File ${file}"
  if [ -d merged ]
