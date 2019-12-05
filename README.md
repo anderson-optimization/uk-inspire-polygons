@@ -9,7 +9,6 @@ https://www.gov.uk/government/collections/download-inspire-index-polygons
 
 
 - Issues loading GML files at once using below commands
-- Try merging to 1 and then loading
 
 #### Init, create table
 ```
@@ -26,3 +25,13 @@ do
     echo "awake"
 done
 ```
+
+#### Merge data
+
+- Try merging to 1 and then loading
+
+Tried merging to shapefile, hit limits, shapefiles are suppose to be under 2gb, apparently might work until 4/8gb. 
+
+Moved on to fileGdb, which requires a special build of gdal/ogr with filegdb api.
+
+Found docker image with this built `webmapp/gdal-docker`
