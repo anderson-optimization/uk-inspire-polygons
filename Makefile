@@ -6,7 +6,7 @@ build:
 
 deploy:
 	docker push ${IMAGE}
-	
+
 inspect:
 	docker run -it --rm \
 		-v ${REPO_DIR}:/var/task \
@@ -15,3 +15,13 @@ inspect:
 		${IMAGE} /bin/bash
 
 .PHONY: build test
+
+extract_archive:
+	cd archive
+	for i in *.zip; 
+	do 
+		echo $i
+		name=$(basename $i .zip) 
+		mkdir -p $name
+		unzip -o -d ./$name $i
+	done
