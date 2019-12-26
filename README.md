@@ -35,3 +35,56 @@ Tried merging to shapefile, hit limits, shapefiles are suppose to be under 2gb, 
 Moved on to fileGdb, which requires a special build of gdal/ogr with filegdb api.
 
 Found docker image with this built `webmapp/gdal-docker`
+
+#### Working with gml
+
+https://github.com/3XE/Land-Registry-INSPIRE-Index-Polygons-tools
+
+```
+export GML_GFS_TEMPLATE=Land_Registry_Cadastral_Parcels.gfs
+```
+
+schema 
+```
+<GMLFeatureClassList>
+  <GMLFeatureClass>
+    <Name>PREDEFINED</Name>
+    <ElementPath>PREDEFINED</ElementPath>
+    <GeometryType>3</GeometryType>
+    <SRSName>urn:ogc:def:crs:EPSG::27700</SRSName>
+    <DatasetSpecificInfo>
+      <ExtentXMin>0.0</ExtentXMin>
+      <ExtentXMax>700000.0</ExtentXMax>
+      <ExtentYMin>0.0</ExtentYMin>
+      <ExtentYMax>1300000.0</ExtentYMax>
+    </DatasetSpecificInfo>
+    <PropertyDefn>
+      <Name>INSPIREID</Name>
+      <ElementPath>INSPIREID</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>LABEL</Name>
+      <ElementPath>LABEL</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>NATIONALCADASTRALREFERENCE</Name>
+      <ElementPath>NATIONALCADASTRALREFERENCE</ElementPath>
+      <Type>Integer</Type>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>VALIDFROM</Name>
+      <ElementPath>VALIDFROM</ElementPath>
+      <Type>String</Type>
+      <Width>24</Width>
+    </PropertyDefn>
+    <PropertyDefn>
+      <Name>BEGINLIFESPANVERSION</Name>
+      <ElementPath>BEGINLIFESPANVERSION</ElementPath>
+      <Type>String</Type>
+      <Width>24</Width>
+    </PropertyDefn>
+  </GMLFeatureClass>
+</GMLFeatureClassList>
+```
